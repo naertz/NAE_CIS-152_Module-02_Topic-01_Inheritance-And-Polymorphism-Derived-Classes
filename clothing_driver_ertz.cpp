@@ -13,7 +13,7 @@
 *                    unmodified. I have not given other fellow students access to my program.
 ************************************************************************************************************************/
 
-#include "Clothing.h"
+#include "clothing.h"
 
 #include <iostream>
 

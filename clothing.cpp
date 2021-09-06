@@ -4,7 +4,7 @@
 * Created : 08/30/2021
 **************************/
 
-#include "Clothing.h"
+#include "clothing.h"
 
 #include <sstream>
 
