@@ -9,7 +9,13 @@ CONFIG -= app_bundle
 
 SOURCES += \
     clothing.cpp \
-    clothing_driver_ertz.cpp
+    clothing_driver_ertz.cpp \
+    main_driver_ertz.cpp \
+    pants.cpp \
+    pants_driver_ertz.cpp \
+    shirt.cpp \
+    shirt_driver_ertz.cpp \
+    validate_shirt_parameters.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -17,4 +23,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    clothing.h
+    clothing.h \
+    clothing_driver_ertz.h \
+    pants.h \
+    pants_driver_ertz.h \
+    shirt.h \
+    shirt_driver_ertz.h \
+    validate_shirt_parameters.h
