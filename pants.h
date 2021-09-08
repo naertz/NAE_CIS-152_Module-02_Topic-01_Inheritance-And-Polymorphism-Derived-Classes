@@ -16,8 +16,8 @@ class Pants : public Clothing {
         Pants();                                    // Default Constructor
         Pants(std::string size);                    // Size Constructor
         Pants(std::string size, std::string color); // Main Constructor
-        std::string info() const;                   // Overidden Class Information Printer
-        std::string wash() const;                   // Overidden Wash Instructions Printer
+        std::string info() const;                   // Overridden Class Information Printer
+        std::string wash() const;                   // Overridden Wash Instructions Printer
         std::string hang() const;                   // Hang Instructions Printer
 };
 

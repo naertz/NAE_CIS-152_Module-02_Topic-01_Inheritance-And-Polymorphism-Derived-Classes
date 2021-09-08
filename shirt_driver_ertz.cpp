@@ -1,4 +1,4 @@
-// =======================================================================================================================
+// ====================================================================================================================
 // Name             : Shirt Driver
 // Author           : Noah Allan Ertz
 // Created          : 09/06/2021
@@ -9,9 +9,9 @@
 // Copyright        : This is my own original work based on specifications issued by our instructor.
 // Description      : Prints 3 Shirt objects, their manipulations, and their instructions.
 //                    Output: 3 Shirt objects' information, manipulations, and instructions each followed by a newline.
-// Academic Honesty : I attest that this is my original work. I have not used unauthorized source code, either modified or
-//                    unmodified. I have not given other fellow students access to my program.
-// =======================================================================================================================
+// Academic Honesty : I attest that this is my original work. I have not used unauthorized source code, either modified
+//                    or unmodified. I have not given other fellow students access to my program.
+// ====================================================================================================================
 
 #include "shirt_driver_ertz.h"
 
@@ -32,19 +32,20 @@ void shirtDriver() {
     // Print object.
     std::cout << largeLongBlack.info() << std::endl;  // O(1)
 
-    // Create object with size and sleeves constructor.
-    Shirt mediumNoneBlue = Shirt("M", "none");        // O(1)
+    // Create object with main constructor.
+    Shirt mediumNoneBlue = Shirt("none");             // O(1)
 
     // Print object.
     std::cout << mediumNoneBlue.info() << std::endl;  // O(1)
 
-    // Use mutator on second object.
+    // Use mutators on second object.
+    mediumNoneBlue.setSize("M");                      // O(1)
     mediumNoneBlue.setColor("blue");                  // O(1)
 
     // Print object.
     std::cout << mediumNoneBlue.info() << std::endl;  // O(1)
 
-    // Create object with main constructor.
+    // Create object with main constructor with delegated base constructor.
     Shirt smallShortRed = Shirt("S", "red", "short"); // O(1)
 
     // Print object.
@@ -62,4 +63,4 @@ void shirtDriver() {
     std::cout << smallShortRed.hang() << std::endl;   // O(1)
 }
 
-// O(1) * 21 = O(1)
+// O(1) * 22 = O(1)

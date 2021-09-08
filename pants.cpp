@@ -20,7 +20,7 @@ Pants::Pants(std::string size, std::string color) : Clothing(size, color) { }
 // ==========================================================================
 
 // Function(s) =================================================================================================================
-// Overidden Class Information Printer
+// Overridden Class Information Printer
 std::string Pants::info() const {
     std::ostringstream oSS;
 
@@ -31,7 +31,7 @@ std::string Pants::info() const {
     return objectInformation;
 }
 
-// Overidden Wash Instructions Printer
+// Overridden Wash Instructions Printer
 std::string Pants::wash() const {
     std::ostringstream oSS;
 

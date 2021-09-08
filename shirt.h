@@ -8,21 +8,19 @@
 #define SHIRT_H
 
 #include "clothing.h"
-#include "validate_shirt_parameters.h"
 
 #include <string>
 
 class Shirt : public Clothing {
     public:
         Shirt();                                                             // Default Constructor
-        Shirt(std::string size, std::string sleeves);                        // Size and Sleeves Delegated Constructor (to Self)
-        Shirt(ValidateShirtParameters shirtParameters);                      // Size and Sleeves Delegated Constructor (Self to Base)
-        Shirt(std::string size, std::string color, std::string sleeves);     // Main Delegated Constructor (to Self)
-        Shirt(ValidateShirtParameters shirtParameters, std::string sleeves); // Main Delegated Constructor (Self to Base)
+        Shirt(std::string sleeves);                                          // Main Constructor
+        Shirt(std::string size, std::string color, std::string sleeves);     // Main Constructor with Delegated Base Constructor
+        void setSize(std::string size);                                      // Overridden Size Mutator
         void setSleeves(std::string sleeves);                                // Sleeve Length Mutator
         std::string getSleeves() const;                                      // Sleeve Length Accessor
-        std::string info() const;                                            // Overidden Class Information Printer
-        std::string wash() const;                                            // Overidden Wash Instructions Printer
+        std::string info() const;                                            // Overridden Class Information Printer
+        std::string wash() const;                                            // Overridden Wash Instructions Printer
         std::string hang() const;                                            // Hang Instructions Printer
     private:
         std::string sleeves;                                                 // Sleeve Length

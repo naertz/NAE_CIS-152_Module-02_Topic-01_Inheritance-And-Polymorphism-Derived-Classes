@@ -8,33 +8,60 @@
 
 #include <sstream>
 
-// Constructor(s) ===============================================================================================================
+// Global Static Function(s) ==========================================
+// Size Validator
+static std::string validateSize(const std::string& size) {
+    std::string validatedSize = "M";
+
+    if (size != "S" && size != "M" && size != "L") {
+            validatedSize = "M";
+        } else {
+            validatedSize = size;
+        }
+
+    return validatedSize;
+}
+
+// Sleeve Length Validator
+static std::string validateSleeves(const std::string& sleeves) {
+    std::string validatedSleeves = "short";
+
+    if (sleeves != "none" && sleeves != "short" && sleeves != "long") {
+            validatedSleeves = "short";
+        } else {
+            validatedSleeves = sleeves;
+        }
+
+    return validatedSleeves;
+}
+// ====================================================================
+
+// Constructor(s) ============================================================================================
 // Default
-Shirt::Shirt() : Shirt(ValidateShirtParameters("M", "short")) { }
-
-// Size and Sleeves Delegated (to Self)
-Shirt::Shirt(std::string size, std::string sleeves) : Shirt(ValidateShirtParameters(size, sleeves)) { }
-
-// Size and Sleeves Delegated (Self to Base)
-Shirt::Shirt(ValidateShirtParameters shirtParameters) : Clothing(shirtParameters.getSize()) {
-    this->sleeves = shirtParameters.getSleeves();
+Shirt::Shirt() : Clothing(validateSize("M")) {
+    this->sleeves = validateSleeves("short");
 }
 
-// Main Delegated (to Self)
-Shirt::Shirt(std::string size, std::string color, std::string sleeves) : Shirt(ValidateShirtParameters(size, sleeves), color) { }
-
-// Main Delegated (Self to Base)
-Shirt::Shirt(ValidateShirtParameters shirtParameters, std::string color) : Clothing(shirtParameters.getSize(), color) {
-    this->sleeves = shirtParameters.getSleeves();
+// Main
+Shirt::Shirt(std::string sleeves) : Clothing(validateSize("M")) {
+    this->sleeves = validateSleeves(sleeves);
 }
-// ==============================================================================================================================
+
+// Main with Delegated Base
+Shirt::Shirt(std::string size, std::string color, std::string sleeves) : Clothing(validateSize(size), color) {
+    this->sleeves = validateSleeves(sleeves);
+}
+// ===========================================================================================================
 
 // Mutator(s) ===============================
+// Overridden Size
+void Shirt::setSize(std::string size) {
+    Clothing::setSize(validateSize(size));
+}
+
 // Sleeve Length
 void Shirt::setSleeves(std::string sleeves) {
-    ValidateShirtParameters shirtParameters = ValidateShirtParameters(sleeves);
-
-    this->sleeves = shirtParameters.getSleeves();
+    this->sleeves = validateSleeves(sleeves);
 }
 // ==========================================
 
@@ -46,7 +73,7 @@ std::string Shirt::getSleeves() const {
 // ====================================
 
 // Function(s) =================================================================================================================================================
-// Overidden Class Information Printer
+// Overridden Class Information Printer
 std::string Shirt::info() const {
     std::ostringstream oSS;
 
@@ -57,7 +84,7 @@ std::string Shirt::info() const {
     return objectInformation;
 }
 
-// Overidden Wash Instructions Printer
+// Overridden Wash Instructions Printer
 std::string Shirt::wash() const {
     std::ostringstream oSS;
 

@@ -14,8 +14,7 @@ SOURCES += \
     pants.cpp \
     pants_driver_ertz.cpp \
     shirt.cpp \
-    shirt_driver_ertz.cpp \
-    validate_shirt_parameters.cpp
+    shirt_driver_ertz.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,5 +27,4 @@ HEADERS += \
     pants.h \
     pants_driver_ertz.h \
     shirt.h \
-    shirt_driver_ertz.h \
-    validate_shirt_parameters.h
+    shirt_driver_ertz.h
