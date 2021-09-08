@@ -28,3 +28,7 @@ HEADERS += \
     pants_driver_ertz.h \
     shirt.h \
     shirt_driver_ertz.h
+
+DISTFILES += \
+    LICENSE \
+    README.md
