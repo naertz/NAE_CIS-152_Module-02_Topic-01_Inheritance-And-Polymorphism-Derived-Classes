@@ -13,7 +13,7 @@
 //                    unmodified. I have not given other fellow students access to my program.
 // =======================================================================================================================
 
-#include "clothing.h"
+#include "clothing_driver_ertz.h"
 
 #include <iostream>
 
