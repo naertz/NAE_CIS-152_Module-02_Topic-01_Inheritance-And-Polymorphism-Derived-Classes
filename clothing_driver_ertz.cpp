@@ -19,43 +19,54 @@
 
 void clothingDriver() {
     // Create object with default constructor.
-    Clothing largeBlack = Clothing();             // O(1)
+    Clothing largeBlack = Clothing();                         // O(1)
 
     // Print object.
-    std::cout << largeBlack.info() << std::endl;  // O(1)
+    std::cout << largeBlack.info() << std::endl;              // O(1)
 
     // Use mutators on first object.
-    largeBlack.setSize("large");                  // O(1)
-    largeBlack.setColor("black");                 // O(1)
+    largeBlack.setSize("large");                              // O(1)
+    largeBlack.setColor("black");                             // O(1)
 
     // Print object.
-    std::cout << largeBlack.info() << std::endl;  // O(1)
+    std::cout << largeBlack.info() << std::endl;              // O(1)
 
     // Create object with size constructor.
-    Clothing mediumBlue = Clothing("medium");     // O(1)
+    Clothing mediumBlue = Clothing("medium");                 // O(1)
 
     // Print object.
-    std::cout << mediumBlue.info() << std::endl;  // O(1)
+    std::cout << mediumBlue.info() << std::endl;              // O(1)
 
     // Use mutator on second object.
-    mediumBlue.setColor("blue");                  // O(1)
+    mediumBlue.setColor("blue");                              // O(1)
 
     // Print object.
-    std::cout << mediumBlue.info() << std::endl;  // O(1)
+    std::cout << mediumBlue.info() << std::endl;              // O(1)
 
     // Create object with main constructor.
-    Clothing smallRed = Clothing("small", "red"); // O(1)
+    Clothing smallRed = Clothing("small", "red");             // O(1)
 
     // Print object.
-    std::cout << smallRed.info() << std::endl;    // O(1)
+    std::cout << smallRed.info() << std::endl;                // O(1)
+
+    // Print each object's accessors.
+    std::cout << largeBlack.getClothingNumber() << std::endl; // O(1)
+    std::cout << largeBlack.getSize() << std::endl;           // O(1)
+    std::cout << largeBlack.getColor() << std::endl;          // O(1)
+    std::cout << mediumBlue.getClothingNumber() << std::endl; // O(1)
+    std::cout << mediumBlue.getSize() << std::endl;           // O(1)
+    std::cout << mediumBlue.getColor() << std::endl;          // O(1)
+    std::cout << smallRed.getClothingNumber() << std::endl;   // O(1)
+    std::cout << smallRed.getSize() << std::endl;             // O(1)
+    std::cout << smallRed.getColor() << std::endl;            // O(1)
 
     // Print each object's instructions.
-    std::cout << largeBlack.wash() << std::endl;  // O(1)
-    std::cout << largeBlack.pack() << std::endl;  // O(1)
-    std::cout << mediumBlue.wash() << std::endl;  // O(1)
-    std::cout << mediumBlue.pack() << std::endl;  // O(1)
-    std::cout << smallRed.wash() << std::endl;    // O(1)
-    std::cout << smallRed.pack() << std::endl;    // O(1)
+    std::cout << largeBlack.wash() << std::endl;              // O(1)
+    std::cout << largeBlack.pack() << std::endl;              // O(1)
+    std::cout << mediumBlue.wash() << std::endl;              // O(1)
+    std::cout << mediumBlue.pack() << std::endl;              // O(1)
+    std::cout << smallRed.wash() << std::endl;                // O(1)
+    std::cout << smallRed.pack() << std::endl;                // O(1)
 }
 
-// O(1) * 17 = O(1)
+// O(1) * 26 = O(1)
